@@ -1,6 +1,6 @@
 Kevin Validator
 ====
-<strong>Updated to Design</strong>
+<strong>Update to Design</strong>
 Users can now set an optional flag to specify a sort of valid URLs, invalid URLs, or all URLs from the input file.
 The command for running main.py with this new feature is shown below:
 
