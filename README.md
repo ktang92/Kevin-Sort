@@ -3,8 +3,7 @@ Kevin Validator
 <strong>Update to Design</strong>
 NOTE: Much of the code for url normalization was implemented before the announcement that this project would be an individual project so much of the code should be the same as the other members of the group.
 
-Users can now set an optional flag to specify a sort of valid URLs, invalid URLs, or all URLs from the input file.
-The command for running main.py with this new feature is shown below:
+The program is run by validator.py where input file is a document populated with urls with 1 url per line. 
 
     $python validator.py input-file output-file
 
