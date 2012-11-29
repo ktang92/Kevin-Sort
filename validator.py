@@ -1,7 +1,10 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 """
-
-  The main function. Assume all characters are in ASCII.
-
+Kevin Tang
+CSE 403
+URL Exercise
 """
 
 import sys, random

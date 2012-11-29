@@ -1,5 +1,20 @@
-Sort
+Kevin Validator
 ====
+<strong>Changes to Group Design</strong>
+Validator is now a new separate python program.
+
+validator.py:
+    $python validator.py input-file output-file
+
+A test suite is now included
+test\_validator.py
+
+The design of this validator program is mostly the same as the group's design but there are a few important changes.
+
+In the previous design, comparators would always return that an normalized url as greater than any un-normalized url. This has been changed so that for every url, only the normalized versions of the url would be compared for the comparator operations
+
+
+<strong>Group Design Portion</strong>
 <strong>November 21st Release</strong>
 Users can now set an optional flag to specify a sort of valid URLs, invalid URLs, or all URLs from the input file.
 The command for running main.py with this new feature is shown below:
