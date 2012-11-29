@@ -1,18 +1,39 @@
 Kevin Validator
 ====
-<strong>Changes to Group Design</strong>
-Validator is now a new separate python program.
+<strong>Updated to Design</strong>
+Users can now set an optional flag to specify a sort of valid URLs, invalid URLs, or all URLs from the input file.
+The command for running main.py with this new feature is shown below:
 
-validator.py:
     $python validator.py input-file output-file
 
-A test suite is now included
-test\_validator.py
+An URL is considered valid if the original URL matches the normalized URL. We made this assumption to simplify what is
+considered valid since the things needed to be considered in normalized form are fairly standard.The same cases we are addressing
+considering whether a url is normalized are therefore the same things we address in its validity. We didnt want to address
+very small issues that may be contained in a non normalized URL, which some people still accept as valid. We felt the issues
+addressed in making sure a url is normal eliminates most of the odd things in a url that would make it invalid. 
 
-The design of this validator program is mostly the same as the group's design but there are a few important changes.
+This program normalizes URLs using url\_normalized.py module implemented by Nikolai Panov. This is a fairly standard
+normalized form that covers the cases we were most concerned with. It normalizes URLs using the following rules:
 
-In the previous design, comparators would always return that an normalized url as greater than any un-normalized url. This has been changed so that for every url, only the normalized versions of the url would be compared for the comparator operations
+<ul>
+  <li>Take care of IDN domains.
+  <li>Convert the scheme and host to lower case.</li>
+  <li>Capitalize letters in escape sequences.</li>
+  <li>Decode percent-encoded octets of unreserved characters.</li>
+  <li>Remove the default port.</li>
+  <li>Remove dot-segments.</li>
+  <li>Remove duplicate slashes.</li>
+  <li>Remove the "?" when the query is empty.</li>
+  <li>Use 'http' schema by default when appropriate.</li>
+  <li>For schemes that define a default authority, use an empty authority if the default is desired.</li>
+  <li>For schemes that define an empty path to be equivalent to a path of "/", use "/".</li>
+  <li>All portions of the URI must be utf-8 encoded NFC from Unicode strings.</li>
+</ul>
 
+Therefore our defintion of when a URL is in  normalized form, is a URL that abides by the above rules. 
+Our definition of a valid URL is one that abides by these rules as well.
+
+Comparisons for URLs are handled by doing a string comparison (based on alphabetical ordering) on the normalized urls. 
 
 <strong>Group Design Portion</strong>
 <strong>November 21st Release</strong>
