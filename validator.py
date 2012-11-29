@@ -34,7 +34,8 @@ if __name__ == "__main__":
   urls = [URL(x) for x in strings]
   unique_original_urls = {}
   unique_normalized_urls = {}
-  
+ 
+  #find if original and normalized urls are unique 
   for url in urls:
     if url.url in unique_original_urls:
       unique_original_urls[url.url] = False
@@ -48,6 +49,7 @@ if __name__ == "__main__":
 
   outputfile = open(sys.argv[2], 'w+')
 
+  #write url information for each input url
   for url in urls:
     original_url = url.url
     is_valid = str(url.isValid())
