@@ -33,7 +33,7 @@ normalized form that covers the cases we were most concerned with. It normalizes
 Therefore our defintion of when a URL is in  normalized form, is a URL that abides by the above rules. 
 Our definition of a valid URL is one that abides by these rules as well.
 
-Comparisons for URLs are handled by doing a string comparison (based on alphabetical ordering) on the normalized urls. 
+Comparisons for URLs are handled by doing a string comparison (based on alphabetical ordering) on the normalized urls. This means that two URLs that normalize to the same URL are considered equivalent when the '==' comparator is used. This is true even if the original URLs are not the same.
 
 <strong>Group Design Portion</strong>
 <strong>November 21st Release</strong>
